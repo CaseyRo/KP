@@ -1,0 +1,108 @@
+// LESS CSS
+@base: #C6878F;
+@background: #96BC96;
+@buttoncolor: #ffffff;
+@invbuttoncolor: fadeout(#000000, 30%);
+@navbuttoncolor: fadeout(@buttoncolor, 40%);
+
+// mixins for bootstrap
+
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+
+.main{
+	height: 100vh;
+	background-image: url('../img/placehold2.jpg'); 
+	background-size: cover; 
+	max-height: 100vh; 
+	height:100vh;
+	background-position: 50% 0;
+	&2{
+		height: 100vh;
+		background-image: url('../img/placehold4.jpg'); 
+		background-size: cover; 
+		max-height: 100vh; 
+		height:100vh;
+		background-position: 50% 0;
+		
+	}
+	
+}
+
+.kittbutton
+{
+	font-size: 10vw;
+	color:@buttoncolor;
+	@media (max-width: @screen-xs-max) {
+		font-size: 15vw;
+	}
+}
+.main2 .navbtn{
+	color:@invbuttoncolor;
+}
+
+.maxheight
+{
+	height:100vh;
+}
+
+.kittmiddle
+{
+	top:40vh;
+	position: relative;
+}
+.nav
+{
+	position:fixed;
+	bottom:0px;
+	right:10px;
+}
+.navleft
+{
+	position:fixed;
+	bottom:0px;
+	left:10px;
+}
+.navbtn{
+	color: @navbuttoncolor;
+	font-size: 8vw;
+	.transition(opacity);
+	@media (max-width: @screen-xs-max) {
+		font-size: 15vw;
+	}
+}
+.navbtn:hover,.playbutton:hover{
+	color: @base;
+	cursor: pointer;
+	opacity: 0.8;
+
+}
+.centered{
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	&relative{
+  		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+  		position:relative;
+  	}
+}
+
+// mixins for transitions and animations
+.transition (@name, @duration: 250ms, @ease: ease-in-out){
+	-webkit-transition: @name @duration @ease;
+	-moz-transition: @name @duration @ease;
+	-ms-transition: @name @duration @ease;
+	-o-transition: @name @duration @ease;
+	transition: @name @duration @ease;
+}
+.animation (@name, @duration: 1000ms, @delay: 0, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation:    @name @duration @delay @ease;
+	-ms-animation:     @name @duration @delay @ease;
+}
